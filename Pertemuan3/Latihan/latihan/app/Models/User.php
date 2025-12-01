@@ -35,7 +35,7 @@ class User extends Authenticatable
 
     /**
      * Get the attributes that should be cast.
-     *
+     * 
      * @return array<string, string>
      */
     protected function casts(): array
@@ -44,5 +44,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function posts() {
+        return $this->hasMany(Post::class);
     }
 }

@@ -11,4 +11,4 @@ class CategoryController extends Controller
     {
         return ('Ini adalah CategoryController!');
     }
-}
+} 

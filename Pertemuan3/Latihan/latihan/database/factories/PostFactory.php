@@ -29,4 +29,4 @@ class PostFactory extends Factory
             'image' => null,
         ];
     }
-}
+} 

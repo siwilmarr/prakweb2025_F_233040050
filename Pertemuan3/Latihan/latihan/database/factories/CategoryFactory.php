@@ -20,4 +20,4 @@ class CategoryFactory extends Factory
             'name' => fake()->unique()->word(),
         ];
     }
-}
+} 

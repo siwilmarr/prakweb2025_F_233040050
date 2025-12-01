@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             User::create([
                 'nama' => 'User' . $i,
                 'username' => 'user' . $i,
-                'email' => 'user' . $i . '@example.com',
+                'email' => 'user' . $i . '@example.com', 
                 'password' => bcrypt('password'), 
             ]);
         }
