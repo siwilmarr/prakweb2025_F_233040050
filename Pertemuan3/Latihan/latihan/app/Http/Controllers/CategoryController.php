@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index() 
     {
         return ('Ini adalah CategoryController!');
     }
-} 
+}
