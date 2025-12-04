@@ -7,7 +7,7 @@ use App\Models\Category;
 
 // Contoh route untuk menampilkan view
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/about', function () {

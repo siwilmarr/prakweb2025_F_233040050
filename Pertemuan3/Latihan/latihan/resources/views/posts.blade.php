@@ -1,18 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Halaman Daftar Posts</title>
-</head>
-<body>
-    <h1>Daftar Posts</h1>
+<x-layout>
+    <x-slot:title>
+        Posts
+    </x-slot:title>
 
-    @foreach ($posts as $post)
-        <article>
-            <h2><a href="/posts/{{ $post->slug }}">{{ $post->title }}</a></h2>
-            <p>{{ $post->excerpt }}</p>
-        </article>
-</body>
-</html>
+    @if ($posts->count())
+
+        @foreach ($posts as $post)
+            <article class="mb-4 border-bottom pb-3">
+                <h2>
+                    <a href="/posts/{{ $post->slug }}">
+                        {{ $post->title }}
+                    </a>
+                </h2>
+
+                <p>
+                    By <strong>{{ $post->author->name }}</strong>
+                    in <strong>{{ $post->category->name }}</strong>
+                </p>
+
+                <p>{{ $post->excerpt }}</p>
+            </article>
+        @endforeach
+
+    @else
+        <p>Tidak ada post ditemukan.</p>
+    @endif
+</x-layout>

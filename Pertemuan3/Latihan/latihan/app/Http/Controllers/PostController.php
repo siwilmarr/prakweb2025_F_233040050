@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index() 
+    public function index(Request $request)
     {
-        $posts = Post::all();
-        return ('Ini adalah PostController!');
+        return view('posts', [
+            'title' => 'Daftar Posts',
+            'posts' => Post::latest()
+                            ->filter($request->only(['search','category','author']))
+                            ->get()
+        ]);
     }
 }
